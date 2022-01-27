@@ -371,8 +371,78 @@ Un proyecto que ayuda a tener todo seguro es *snyk* que se puede encontrar en su
 
 ### 12. Crear un paquete para NPM
 
+Para crear un paquete de NPM, proyecto de mensajes random al ejecutar un comando.
+
+```BASH
+#Primero crear una carpeta para el proyecto
+mkdir random-messages
+
+#Inicializar git
+git init
+
+#Inicializar con npm
+npm init
+```
+La estructura del proyecto es la siguiente
+
+```text
+random-messages/
+├── bin/
+│   └── global.js
+└── src/
+│	└── index.js
+└── package.json
+```
+
+Creamos *index.js* en la carpeta *src*:
+
+```js
+const messages = ["Oscar", "Ana", "Nikolai", "Diego", "Laura"]
+
+const randomMsg = () => {
+    const message = messages[Math.floor(Math.random() * messages.lenght)];
+    console.log (message);
+}
+
+module.exports = { randomMsg };
+```
+
+En la carpeta *bin* creamos el archivo *global.js*:
+
+```js
+#!/usr/bin/env node
+let random = require('../src/index.js');
+
+random.randomMsg();
+```
+
+En nuestro archivo package.json definimos *bin* y *preferGlobal*:
+
+```json
+{
+  "name": "random-mesagges",
+  "version": "1.0.0",
+  "description": "Random de mensajes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "author name <author@email.com>",
+  "license": "MIT",
+  "bin": {
+    "random-msg": "./bin/global.js"
+  },
+  "preferGlobal": true
+
+}
+```
+
 ### 13. Publicar un paquete en NPM
 
+
+
 ### 14. Paquetes privados
+
+
 
 ### 15. Cierre del curso
