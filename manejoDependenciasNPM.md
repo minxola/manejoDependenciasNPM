@@ -316,9 +316,34 @@ Los símbolos mas usados se pueden ver en la siguiente tabla:
 
 ### 9. Ejecutar tareas
 
+Las **tareas** o **scripts** son comandos que podemos establecer y ejecutar desde la consola, y podemos crear los que necesitemos, además van a correr de forma nativa dentro de nuestra terminal, para nombrarlo debe ser un shortcut de lo que vamos a ejecutar con `npm run <script-name>`
 
+Se pueden crear multiples scripts, los cuales van a depender del tipo de paquete que estamos utilizando, estos comandos van en la sección **scripts** de nuestro ***package.json***. Los comandos de cada paquete se le pueden encontrar en la documentación de los mismos.
+
+```json
+"scripts": {
+	"build": "webpack --mode production",
+	"start": "webpack-dev-server --open --mode development",
+	"format": "prettier --write '{**.js,src/**/*.{js,jsx}}'"
+	"lint": "eslint src/ --fix",
+	//aqui podemos concatenar dos comandos
+	"deploy": "npm run format && npm run build"
+}
+```
+
+Para correr estos scripts usaremos lo siguiente:
+
+```bash
+npm run build #Para correr el script webpack --mode production
+npm run start #Para correr webpack-dev-serve --open....
+#Así para cada script que corramos
+```
+
+Los scripts se pueden concatenar o poner condiciones usando `&&` y `||`.
 
 ### 10. Solución de problemas
+
+
 
 ### 11. Seguridad
 
