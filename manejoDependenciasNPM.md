@@ -343,9 +343,20 @@ Los scripts se pueden concatenar o poner condiciones usando `&&` y `||`.
 
 ### 10. Solución de problemas
 
+- Durante la ejecución de tareas podrían presentarse errores. La recomendación es que *se debe leer primero en que consiste el error*, y de acuerdo a esto se puede dar la solución adecuada.
 
+- En consola se podría mostrar un *log* del error, en el cual podemos encontrar mas información, entonces podemos ver el archivo de log abriendo en un editor de texto como VSC: `code /users/username/_logs/file.log`
+- Cada error va ser distinto.
+- Para ver mas detalles de como se ejecuta un comando, se puede agregar el flag `--dd`. Se nos mostrará que tareas se realizan para obtener el resultado de un script.
+- También se puede eliminar el cache del proyecto con: `npm cache clean --force`
+- Para verificar el cache usar el comando: `npm cache verify`
+- Si hay algún error en *node_modules/* se puede eliminar usando `rm -rf node_modules/` y luego correr `npm install` para instalar nuevamente los paquetes de *package.json*
+- Un paquete que nos ayuda a eliminar de forma segura el **node_modules** es ***rimraf*** y lo podemos instalar globalmente con `npm install -g rimraf`
+- Para eliminar de forma segura una carpeta usamos rimraf `rimraf node_modules`, luego podemos correr el comando `npm install` para instalar nuevamente los paquetes indicados en *package.json*.
 
 ### 11. Seguridad
+
+
 
 ## Publicar un paquete
 
