@@ -152,7 +152,119 @@ Este comando muestra la lista de paquetes instalados de manera global.
 
 ### 6. Instalación de dependencias con force
 
+#### Ver el output de una instalación
+
+A veces queremos obtener información de un paquete antes de instalar, este comando simula una instalación y devuelve el output (info), luego se puede decidir si se hace la instalación:
+
+```bash
+#Simula la instalación de react
+npm install react --dry-run
+
+#Con la información devuelta, decidimos si lo instalamos o no
+
+#El paquete no se instalará, por lo que no aparece en package.json
+```
+
+#### Forzar la instalación de la última versión
+
+Si queremos instalar la última versión de un paquete se debe usar el flag `-force` o `-f`
+
+```bash
+#Istalación de webpack ultima versión
+npm install webpack -f
+```
+
+Cuando se hace este tipo de instalación, puede darse el caso de que el paquete instalado no se encuentre en la lista de dependencias correcta de **package.json**.
+
+> Si se da este caso, siempre podemos editar el archivo y agregar el paquete manualmente, moviendo según el tipo de dependencia: **Producción**, **Desarrollo** u **Opcionales**.
+
+Luego se debe correr el comando:
+
+```bash
+#Comando que revisa e instala todos los paquetes de package.json
+npm install
+```
+
+`npm install` instala todas las dependencias que aparecen en el archivo ***package.json***
+
+#### Instalar una versión específica
+
+Puede darse el caso de que queramos instalar una versión antigua o específica de un paquete, en ese caso se debe usar el comando:
+
+```bash
+#Istalación de json-server versión 0.15.0
+npm install json-server@0.15.0
+```
+
 ### 7. Actualizar y eliminar paquetes
+
+#### Ver los paquetes instalados en el proyecto
+
+```bash
+#Ver paquetes instalados
+npm list
+
+#Se puede usar profundidad depth para ver por niveles
+npm list --depth=0
+```
+
+#### Ver versiones de un paquete
+
+```bash
+#Ver la ultima versión disponible de un paquete
+npm v react version
+
+#Ver todas las versiones disponibles
+npm v react versions
+```
+
+#### Ver paquetes no actualizados
+
+```bash
+#Ver que paquete no esta actualizado
+npm outdate
+```
+
+#### Ver lo que sucede cuando corremos un comando
+
+Para esto se debe usar el flag `--dd`
+
+```bash
+npm outdate --dd
+```
+
+Se mostrará en consola, las peticiones que hace npm a los servidores.
+
+#### Actualizar todos los paquetes
+
+```bash
+npm update
+```
+
+#### Actualizar un paquete específico a su ultima versión
+
+```bash
+npm install json-server@latest
+```
+
+#### Desinstalar un paquete
+
+Para desinstalar un paquete se debe remover de la carpeta *node_modules* y del archivo *package.json*, se usa el comando:
+
+```bash
+npm uninstall json-server
+```
+
+#### Eliminar paquete de node_modules y no de package.json
+
+```bash
+#El paquete se mantiene en package.json
+npm uninstall webpack --no-save
+```
+
+#### Comparar node_modules y package.json (extensión para VSC)
+
+La extensión para Visual Studio Code: ***npm***, revisa y compara *package.json* con la carpeta *node_modules* para ver si hay algún paquete con problemas o no esta instalado.
 
 ### 8. Package lock y el uso de simbolos ^ y ~
 
