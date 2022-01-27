@@ -353,10 +353,19 @@ Los scripts se pueden concatenar o poner condiciones usando `&&` y `||`.
 - Si hay algún error en *node_modules/* se puede eliminar usando `rm -rf node_modules/` y luego correr `npm install` para instalar nuevamente los paquetes de *package.json*
 - Un paquete que nos ayuda a eliminar de forma segura el **node_modules** es ***rimraf*** y lo podemos instalar globalmente con `npm install -g rimraf`
 - Para eliminar de forma segura una carpeta usamos rimraf `rimraf node_modules`, luego podemos correr el comando `npm install` para instalar nuevamente los paquetes indicados en *package.json*.
+- Se puede hacer lo mismo con *npm clean install*, es decir una instalación limpia o desde cero, para eso usamos el comando `npm ci`
 
 ### 11. Seguridad
 
+Debemos asegurarnos que los paquetes instalados estén actualizados y no incluyan código malicioso al momento de desarrollar nuestros proyectos.
 
+- Al momento de usar `npm install` se nos mostrará algunas advertencias sobre algunos paquetes desactualizados y que podrían dar problemas de seguridad.
+- Para ver si algún paquete tiene cambios que puedan afectar nuestros proyectos podemos usar `npm audit`
+- Para ver información mas detallada sobre este comando podemos usar: `npm audit json`, que creará un archivo `.json` con mas información.
+- Para actualizar un paquete con error `npm update <package-name> --depth 2`, donde 2 indica la profundidad, es decir los sub-módulos del paquete.
+- Para solucionar todos los errores de los paquetes usar `npm audit fix`, es el comando que se debería ejecutar primero, los paquetes que no se solucionen se puede hacer manualmente usando los otros métodos.
+
+Un proyecto que ayuda a tener todo seguro es *snyk* que se puede encontrar en su web [snyk.io](snyk.io)
 
 ## Publicar un paquete
 
