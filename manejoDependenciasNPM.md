@@ -50,7 +50,21 @@ sudo npm install npm@latest -g
 
 ### 4. Iniciar un proyecto
 
+Siempre al inicial un proyecto se debe crear un repositorio con GIT e inicializar el proyecto con NPM.
 
+- `git init`, inicializa el repositorio de GIT local
+- `npm init`, crea el archivo ***package.json***, se debe ingresar la configuración
+- `npm init -y` o `npm init -yes`, crea package.json modo rápido (configuración mínima)
+
+Para la creación rápida de ***package.json*** se puede establecer algunos valores por defecto.
+
+```bash
+npm set init.author.email 'myemail@mail.com' #set author email
+npm set init.author.name 'Peter Perez' #set author name
+npm set init.license 'MIT'
+```
+
+Luego de establecer los parámetros se puede inicializar con `npm init -y`, y se generará el archivo ***package.json*** con los valores predefinidos.
 
 ### 5. Instalación de dependencias
 
