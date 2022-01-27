@@ -454,6 +454,23 @@ Es necesario agregar información adiciónal.
 
 ### 14. Paquetes privados
 
+Para que un proyecto cumpla con todos los estándares debe tener:
 
+- Un buen **README.md**
+- Un repositorio en **github.com**
+
+Luego de hacer cambios se debe versionar nuestro paquete con:
+
+`npm version patch` para patches
+
+`npm version minor` para cambios menores
+
+`npm version major` para versiones majores
+
+Luego actualizamos la versión de nuestro paquete en npm con `npm public`
+
+Nuestro paquete quedará disponible para que cualquiera que use npm lo pueda instalar en su proyecto, también queda disponible para que reciba apoyo de toda la comunidad en nuestro repositorio.
+
+Para instalar nuestro paquete: `npm i <package_name>` con los flags según las necesidades.
 
 ### 15. Cierre del curso

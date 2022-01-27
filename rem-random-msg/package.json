@@ -1,0 +1,19 @@
+{
+  "name": "rem-random-msg",
+  "version": "1.0.0",
+  "description": "random messages",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "javascript"
+  ],
+  "author": "minxola <reminxola69@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "rem-random-msg": "./bin/global.js"
+  },
+  "preferGlobal": true
+}
