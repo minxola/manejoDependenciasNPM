@@ -268,7 +268,55 @@ La extensión para Visual Studio Code: ***npm***, revisa y compara *package.json
 
 ### 8. Package lock y el uso de simbolos ^ y ~
 
+#### Versionado
+
+Las versiones de los paquetes se manejan generalmente con 3 dígitos:
+
+- `x__`: primer dígito representa cambios mayores (breaking changes)
+- `_x_`: segundo dígito cambios menores (compatibilidad, funcionabilidad, refactor)
+- `__x`: tercer dígito parches o bug fixes
+
+#### Manejo de versiones y actualizaciones en package.json
+
+- Por defecto **package.json** no instalará versiones mayores, puesto que puede romper el código.
+- **package-lock.json**, asegura o bloquea las dependencias. Muestra las dependencias y sub dependencias del proyecto.
+- Si hay **package-lock.json**, se instalan exactamente las versiones que se encuentren en el mismo, de caso contrario se instalaran las versiones recientes según el uso de `^` o `~` en **package.json**
+
+#### Versionado semántico
+
+En **package.json** se puede indicar que tipo de actualización se debe realizar al correr algún comando de actualización como `npm update`, pueden haber cambios mayores, menores y de parches o bug fixes.
+
+El tipo de actualización se indica en el archivo ***package.json***, sección dependencias:
+
+```json
+  "dependencies": {
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "date-fns": "^2.28.0",
+    "webpack": "^5.67.0"
+  },
+  "optionalDependencies": {
+    "eslint": "^8.7.0"
+  }
+```
+
+Los símbolos mas usados se pueden ver en la siguiente tabla:
+
+| SIMBOLO                        | SIGNIFICADO                      | Ejemplo    |
+| ------------------------------ | -------------------------------- | ---------- |
+| `^` acento circunflejo (caret) | Only minor and bug fixes updates | `^0.15.0`  |
+| `~` virgulilla                 | Only bug fixes updates           | `~0.15.0`  |
+| `<`                            | Solo menor a la indicada         | `<2.15.8`  |
+| `<=`                           | Menor o igual                    | `<=2.15.8` |
+| `>`                            | mayor a la indicada              | `>10.2.4`  |
+| `>=`                           | mayor o igual a indicada         | `>=10.2.4` |
+
+> Si se quiere tener una versión exacta de un paquete, no se debe colocar símbolos para actualización en el *package.json*, solo indicar la versión `"0.15.0"`
+
 ### 9. Ejecutar tareas
+
+
 
 ### 10. Solución de problemas
 
