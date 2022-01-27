@@ -375,7 +375,7 @@ Para crear un paquete de NPM, proyecto de mensajes random al ejecutar un comando
 
 ```BASH
 #Primero crear una carpeta para el proyecto
-mkdir random-messages
+mkdir random-msg
 
 #Inicializar git
 git init
@@ -386,7 +386,7 @@ npm init
 La estructura del proyecto es la siguiente
 
 ```text
-random-messages/
+random-msg/
 ├── bin/
 │   └── global.js
 └── src/
@@ -439,7 +439,18 @@ En nuestro archivo package.json definimos *bin* y *preferGlobal*:
 
 ### 13. Publicar un paquete en NPM
 
+- Dentro de la carpeta del paquete se debe correr `npm link`, lo añade a la configuración del equipo y verifica vulnerabilidades.
+- También podemos instalar nuestro paquete usando la ruta del directorio que lo contiene `npm install -g c:/users/username/random-msg`
 
+#### Publicar un paquete
+
+- Crear una cuenta en [https://www.npmjs.com/](https://www.npmjs.com/)
+- En la terminar correr `npm adduser`
+- Publicar el paquete con `npm publish`
+
+Luego se puede ver el paquete en la sección *paquetes* del sitio de NPM.
+
+Es necesario agregar información adiciónal.
 
 ### 14. Paquetes privados
 
