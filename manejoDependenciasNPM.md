@@ -456,8 +456,8 @@ Es necesario agregar información adiciónal.
 
 Para que un proyecto cumpla con todos los estándares debe tener:
 
-- Un buen **README.md**
-- Un repositorio en **github.com**
+- Un buen **README.md**, donde se explica para que es el paquete, que hace y como usarlo, entre otras indicaciones importantes.
+- Conectar un repositorio en **github.com**
 
 Luego de hacer cambios se debe versionar nuestro paquete con:
 
@@ -467,10 +467,20 @@ Luego de hacer cambios se debe versionar nuestro paquete con:
 
 `npm version major` para versiones majores
 
-Luego actualizamos la versión de nuestro paquete en npm con `npm public`
+Luego actualizamos la versión de nuestro paquete en npm con `npm publish`
 
 Nuestro paquete quedará disponible para que cualquiera que use npm lo pueda instalar en su proyecto, también queda disponible para que reciba apoyo de toda la comunidad en nuestro repositorio.
 
 Para instalar nuestro paquete: `npm i <package_name>` con los flags según las necesidades.
 
 ### 15. Cierre del curso
+
+Lo aprendido:
+
+- Instalar npm
+- Instalar paquetes y dependencias en un proyecto
+- Actualizar dependencias
+- Auditar proyecto
+- Publicar paquetes de npm
+
+**Never Stop Learning**.
